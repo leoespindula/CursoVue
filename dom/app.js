@@ -12,5 +12,6 @@ new Vue({
         random() {
             return Math.random()
         }
+        
     }
 })
