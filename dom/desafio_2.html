@@ -1,0 +1,43 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<style>
+    body{
+        background-color: aquamarine;
+    }
+    div{
+        text-align: center;
+        font-size: 30;
+    }
+    button{
+        font-size: 25;
+        border-radius: 20%;
+        background-color: aqua;
+    }
+    input{
+        font-size: 30;
+    }
+
+</style>
+
+<div id="desafio2">
+    <div>
+        <button v-on:click="alerta">Exibir Alerta</button><hr>
+    </div>
+
+    <div>
+        <input type="text" v-on:keyup="valor = $event.target.value">
+        <p>{{ valor }}</p>
+    </div>
+
+    <div>
+        <input type="text" v-on:keydown.enter="valor = $event.target.value">
+        <p>{{ valor }}</p>
+    </div>
+
+    <div>
+        <input type="text" v-on:keyup="alterarValor">
+        <p>{{alterar}}</p>
+    </div>
+
+</div>
+
+<script src="app.js"></script>

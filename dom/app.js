@@ -15,3 +15,19 @@ new Vue({
         
     }
 })
+
+new Vue({
+    el:'#desafio2',
+    data:{
+        valor:'',
+        alterar:''
+    },
+    methods:{
+        alerta(){
+            alert('Exibindo alerta!')
+        },
+        alterarValor(event){
+            this.alterar = event.target.value
+        }
+    }
+})
