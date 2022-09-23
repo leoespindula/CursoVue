@@ -1,0 +1,50 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<style>
+    div{
+        font-size: 25;
+    }
+    button{
+        font-size: 25;
+    }
+</style>
+<div id="app">
+    <button v-on:click="subtrair">-</button>
+    <p>{{contador}}</p>
+    <button v-on:click="somar">+</button>
+    <hr>
+    <p v-on:mousemove="atualizarXY">
+        Mouse: {{ x }} e {{ y }}
+        <br><span v-on:mousemove="parar">PARAR AQUI!!!</span><br>
+        <span v-on:mousemove.stop>Stop</span>
+    </p>
+    <a href="http://google.com" target="_blank">Google</a><hr>
+    <input type="text" value="Nome" v-on:keyup.ctrl.v="alert">
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            contador:0,
+            x: 0,
+            y: 0
+        },
+        methods:{
+            somar(){
+                this.contador++
+            },
+            subtrair(){
+                this.contador--
+            },
+            atualizarXY(event){
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            parar(e){
+                e.stopPropagation()
+            },
+            alert(){
+                alert('Deseja confirmar?')
+            }
+        }
+    })
+</script>
