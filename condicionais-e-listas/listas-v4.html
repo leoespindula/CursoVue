@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="(cor, i) in cores">{{ i }} - {{ cor }}</li>
+    </ul>
+    <hr>
+    <template v-for="(cor, i) in cores">
+        <h2>{{ cor }}</h2>
+        <p>{{ i }}</p>
+    </template>
+    <hr>
+    <ul>
+        <li v-for="pessoa in pessoas">
+            <hr>
+            {{ pessoa.nome }} tem {{ pessoa.idade }} anos, e pesa {{ pessoa.peso }} Kg.
+            <hr>
+            <div v-for="(valor, chave, i) in pessoa">
+                {{ i+1 }} - {{ chave }} = {{ valor }}
+            </div>
+        </li>
+    </ul>
+    <hr>
+    <div v-for="n in 10">{{ n }}</div>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data: {
+            cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+            pessoas: [
+                {nome: 'Ana', idade: 26, peso: 59},
+                {nome: 'Guilherme', idade: 22, peso: 89},
+            ]
+        }
+    })
+</script>
