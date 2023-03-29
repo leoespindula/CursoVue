@@ -99,3 +99,31 @@ html{
     background-color: #BBB;
     color:#000
 }
+
+/*Logs*/
+
+.logs ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.logs ul li{
+    display: flex;
+    justify-content: center;
+    margin: 4px 0px;
+    font-weight: 600;
+    padding: 3px 0px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+.player{
+    background-color: #4253afaa;
+    color: #fff;
+}
+.monster{
+    background-color: #e51c23aa;
+    color: #fff;
+}
